@@ -1,0 +1,30 @@
+  // create a variable for hash
+  const hash = "#";
+  //create variable for hashAmount
+  let hashAmount = 1;
+  //create variable for totalHash
+  let totalHash = "#";
+  //aske user for how long of a pyramid the want, with only odd numbers
+  let length = Number(prompt("How long of a pyramid do you want? Enter and odd number."));
+  /*divide length by 2 and subtract 0.5 to get a value for how many times the second loop 
+  if statment should run and store as length2*/
+  let length2 = length / 2 - 0.5;
+  //create for loop that stops after "length" cycles 
+  for (let counter = 0;counter < length; counter++) {
+  /*inside for loop another for loop that adds hashs to totalHash based on the
+  hashAmount value*/
+    for (let counter2 = 1; counter2 < hashAmount; counter2 += 1) {
+      totalHash = totalHash + hash;
+    }
+  //inside first for loop if statment, if count is <=2 add 1 to hashAmount
+  if (counter < length2) {
+    hashAmount = hashAmount + 1;
+  }
+  //else subtract 1 from hashAmount
+  else {
+    hashAmount = hashAmount - 1;
+  }
+  //print out totalhash and reset it to totalhash = #
+  console.log(totalHash);
+  totalHash = "#"
+  }
